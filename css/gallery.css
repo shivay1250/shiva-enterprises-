@@ -1,0 +1,57 @@
+/* Projects gallery. Loaded only on projects.html, after style.css */
+
+.page-title {
+  background: var(--charcoal);
+  color: var(--marble);
+  padding: 2.5rem 0;
+}
+
+.page-title h2 {
+  font-size: clamp(2.2rem, 7vw, 3.5rem);
+  margin: 0 0 0.25rem;
+}
+
+.page-title p { margin: 0; max-width: 36rem; }
+
+.gallery {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.75rem 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+}
+
+.gallery figure { margin: 0; }
+
+/* Every photo gets the same 4:3 frame, cropped to fit, so the grid stays neat */
+.gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--stone); /* shown while the photo is still loading */
+}
+
+.gallery figcaption {
+  padding-top: 0.6rem;
+  border-top: 4px solid var(--sandstone);
+  margin-top: -4px; /* pulls the red line up to touch the photo */
+}
+
+.gallery .project-name {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.gallery .project-place { font-size: 0.95rem; }
+
+.site-nav a[aria-current="page"] {
+  color: var(--sandstone);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
